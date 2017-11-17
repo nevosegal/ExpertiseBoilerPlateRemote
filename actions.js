@@ -17,7 +17,7 @@ const Conversation = require('watson-developer-cloud/conversation/v1');
 const languageResource = {
   'en-US': {
     'translation': {
-      'TRY_AGAIN': 'Sorry, I\'m not sure how to answer that.'
+      'TRY_AGAIN': 'Sorry, I don\'t know how to answer that.'
     }
   }
 };
