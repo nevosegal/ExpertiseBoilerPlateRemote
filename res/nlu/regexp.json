@@ -3,28 +3,7 @@
     {
       "name" : ["hello-world"],
       "grammar" : [
-        "data",
-        "consume",
-        "consumption",
-        "red",
-        "bar",
-        "clock",
-        "status",
-        "hear",
-        "hearing",
-        "choppy",
-        "cut",
-        "cuts",
-        "cutting",
-        "bluetooth",
-        "headphone",
-        "headset",
-        "headphones",
-        "headsets",
-        "transparency",
-        "transparancy",
-        "android",
-        "samsung"
+        "{query}"
       ]
     }
   ],
