@@ -1,0 +1,28 @@
+{
+    "topics": [
+        {
+            "keywords": ["data", "consum"],
+            "response": "When Switchboard runs in the background, data usage is pretty minimal. When you are actively on a call, data usage is very similar to a Skype call or a FaceTime Audio call. Also, if you are streaming music through Spotify or other music services, normal data usage will occur from those services."
+        },
+        {
+            "keywords": ["red", "bar", "clock", "status"],
+            "response": "The red bar is required by iOS for any interaction that accesses the microphone in the background. When you minimize the app with the microphone active, you will see a red bar. In addition to being activated when you are in a conversation, there are other features, such as transparency that may be activating the mic even while you are not in a conversation. Don’t worry, we are not the NSA and not recording any calls."
+        },
+        {
+            "keywords": ["hear", "choppy", "cut"],
+            "response": "If you calibrate the enhanced voice activity detector (VAD) in a noisy environment, you may find that you need to speak a little bit louder to avoid having your voice sound choppy to the other person. You should calibrate again if you walk into a quieter environment. We are working on making this easier / automatic."
+        },
+        {
+            "keywords": ["bluetooth", "headphone", "headset"],
+            "response": "Bluetooth headphones can be used but there are currently two limitations that we are working to improve. 1) The phone's on board microphone is used, not the one on your headphones.  2) If you use the transparency feature (i.e. Settings - How loud I hear my own mic), there is a slight delay caused by Bluetooth."
+        },
+        {
+            "keywords": ["transparency", "transparancy"],
+            "response": "Transparency is a feature that allows you to hear your own voice while in a conversation. This is especially useful if you are hoping to hear surrounding noises such as cars while riding a bicycle."
+        },
+        {
+            "keywords": ["android", "samsung", "google"],
+            "response": "As of now, you can only test using iOS or the web app. Native apps for Android are being tested right now, and we will soon have apps for Mac & Windows. Send us an email at feedback@synervoz.com for early access."
+        }
+    ]
+}
