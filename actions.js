@@ -5,6 +5,9 @@
 
 'use strict';
 
+// Read help file
+var help = require('./help');
+
 // The expertise handler
 const {handler} = require('./expertise-sdk');
 const Promise = require('bluebird');
@@ -14,14 +17,7 @@ const Conversation = require('watson-developer-cloud/conversation/v1');
 const languageResource = {
   'en-US': {
     'translation': {
-      'HELLO_WORLD': 'Hello world',
-      'TRY_AGAIN': 'Sorry, please try again later'
-    }
-  },
-  'de-DE': {
-    'translation': {
-      'HELLO_WORLD': 'Hallo Welt',
-      'TRY_AGAIN': 'Sorry, bitte versuchen Sie es später noch einmal'
+      'TRY_AGAIN': 'Sorry, I\'m not sure how to answer that.'
     }
   }
 };
@@ -84,7 +80,18 @@ function processIntent(request, response) {
 const stateDefaultActions = handler.createActionsHandler({
 
   'hello-world': (request, response) => {
-    response.say(handler.t('HELLO_WORLD')).send();
+    var question = request.text.toLowerCase();
+    // Handle help keywords
+    for (var i = 0; i < help.topics.length; i++) {
+      for (var j = 0; j < help.topics[i].keywords.length; j++) {
+        if (question.indexOf(help.topics[i].keywords[j]) !== -1) {
+          response.say(help.topics[i].response).send();
+          return;
+        }
+      }
+    }
+    // All other requests
+    response.say(handler.t('TRY_AGAIN')).send();
   },
 
   'unhandled': (request, response) => {
