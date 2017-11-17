@@ -31,9 +31,9 @@ let conversation;
 try {
     conversation = Promise.promisifyAll(
         new Conversation({
-            url: 'your wcs url',
-            username: 'your wcs username',
-            password: 'your wcs password',
+            url: "https://gateway.watsonplatform.net/conversation/api",
+            username: "2a83bdcd-4b96-46f0-90e7-ce4188fc4f0d",
+            password: "hBKbijLKU2Bb",
             version_date: Conversation.VERSION_DATE_2017_04_21
         })
     );
