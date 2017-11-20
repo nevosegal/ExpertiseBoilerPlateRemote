@@ -5,6 +5,10 @@
 
 'use strict';
 
+// Use Python Shell
+var PythonShell = require('python-shell');
+var chatter = new PythonShell('chatter.py',{scriptPath:"./", pythonOptions: ['-u']});
+
 // Read help file
 var help = require('./help');
 
@@ -17,7 +21,7 @@ const Conversation = require('watson-developer-cloud/conversation/v1');
 const languageResource = {
   'en-US': {
     'translation': {
-      'TRY_AGAIN': 'Sorry, I don\'t know how to answer that.'
+      'TRY_AGAIN': 'Sorry, I can\'t answer that. Please check the intent.'
     }
   }
 };
@@ -91,7 +95,11 @@ const stateDefaultActions = handler.createActionsHandler({
       }
     }
     // All other requests
-    response.say(handler.t('TRY_AGAIN')).send();
+    chatter.send(question);
+    chatter.on('message', function (message) {
+      // received a message sent from the Python script (a simple "print" statement) 
+      response.say(message).send();
+    });
   },
 
   'unhandled': (request, response) => {
