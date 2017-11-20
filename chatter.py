@@ -26,8 +26,8 @@ chatbot_conversation.train(
 )
 
 chatbots = [
-    chatbot_time_math,
-    chatbot_conversation
+    chatbot_conversation,
+    chatbot_time_math
 ]
 
 while (True):
