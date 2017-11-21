@@ -7,4 +7,4 @@ applications:
   domain: mybluemix.net
   name: synervoz-expertise
   host: synervoz-expertise
-disk_quota: 256M
+disk_quota: 1024M
