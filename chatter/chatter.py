@@ -1,13 +1,15 @@
-import shutil, os
+import shutil, os, logging
 
 try:
     shutil.rmtree('./db/')
     os.remove("./db.sqlite3")
+    os.remove("./chatter.log")
 except:
     pass
 
-from chatterbot import ChatBot
+logging.basicConfig(filename="./chatter.log", level=logging.DEBUG)
 
+from chatterbot import ChatBot
 
 chatbot_time_math = ChatBot(
     'Time and Math Bot',
@@ -34,8 +36,6 @@ chatbot_conversation.train(
     "chatterbot.corpus.english.humor",
     "./chatter/common.yaml"
 )
-
-
 
 chatbots = [
     chatbot_conversation,

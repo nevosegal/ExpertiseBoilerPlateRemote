@@ -9,6 +9,9 @@
 var PythonShell = require('python-shell');
 var chatter = new PythonShell('chatter/chatter.py',{scriptPath:"./", pythonOptions: ['-u']});
 
+// Filesystem
+var fs = require('fs');
+
 // Read help file
 var help = require('./help');
 
@@ -97,8 +100,17 @@ const stateDefaultActions = handler.createActionsHandler({
     // All other requests
     chatter.send(question);
     chatter.on('message', function (message) {
-      // received a message sent from the Python script (a simple "print" statement) 
+      console.log("============MESSAGE============");
+      console.log(message);
       response.say(message).send();
+    });
+    // Print Python logs
+    fs.readFile('./chatter.log', 'utf8', function (err,data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(data);
+      }
     });
   },
 
