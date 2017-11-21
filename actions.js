@@ -7,7 +7,7 @@
 
 // Use Python Shell
 var PythonShell = require('python-shell');
-var chatter = new PythonShell('chatter.py',{scriptPath:"./", pythonOptions: ['-u']});
+var chatter = new PythonShell('chatter/chatter.py',{scriptPath:"./", pythonOptions: ['-u']});
 
 // Read help file
 var help = require('./help');

@@ -1,4 +1,13 @@
+import shutil, os
+
+try:
+    shutil.rmtree('./db/')
+    os.remove("./db.sqlite3")
+except:
+    pass
+
 from chatterbot import ChatBot
+
 
 chatbot_time_math = ChatBot(
     'Time and Math Bot',
@@ -22,8 +31,11 @@ chatbot_conversation.train(
     "chatterbot.corpus.english.greetings",
     "chatterbot.corpus.english.botprofile",
     "chatterbot.corpus.english.emotion",
-    "chatterbot.corpus.english.humor"
+    "chatterbot.corpus.english.humor",
+    "./chatter/common.yaml"
 )
+
+
 
 chatbots = [
     chatbot_conversation,
