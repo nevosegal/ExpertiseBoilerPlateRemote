@@ -38,6 +38,6 @@
     "test": "mocha 'test/**/*.js' && ./node_modules/jscs/bin/jscs . && ./node_modules/jshint/bin/jshint ."
   },
   "engines": {
-    "node": "6.10.0"
+    "node": "6.11.5"
   }
 }
