@@ -1,6 +1,6 @@
 applications:
 - path: .
-  buildpack: sdk-for-nodejs
+  buildpack: https://github.com/cloudfoundry/multi-buildpack
   no-route: false
   memory: 128M
   instances: 1
